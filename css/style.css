@@ -1,0 +1,698 @@
+/* --------------------------------------
+  Default Styling
+-------------------------------------- */
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    margin: 0;
+    color: #545454;
+    font-weight: 400;
+    font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans",
+      "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+  }
+
+  h1, h2, h3 {
+    font-family: "Lora", "Piazzolla", "Times New Roman", "YuMincho",
+      "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+    line-height: 1.4;
+    margin-top: 0;
+  }
+
+  h1 {
+    font-weight: 400;
+  }
+
+  h2 {
+    text-align: center;
+    font-weight: 600;
+  }
+
+  h3 {
+    text-align: center;
+    font-weight: 400;
+  }
+
+  p {
+    line-height: 1.8;
+  }
+  
+  span {
+    font-weight: 400;
+  }
+
+  figure {
+    margin: 0;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+  
+  a {
+    color: #545454;
+    text-decoration: none;
+    transition: all 0.15s ease-in-out;
+  }
+  
+/* --------------------------------------
+  Reusable Classes
+-------------------------------------- */
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 50px;
+    box-shadow: 0 3px 1px #545454;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-decoration: none;
+  }
+
+  .button-hero {
+    width: 256px;
+    max-width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #545454;
+    padding: 16px 16px;
+    color: #545454;
+    font-weight: 500;
+  }
+
+  .button-main {
+    background-color: #6d5b4c;
+    color: #ffffff;
+  }
+
+  .button-hero:hover,
+  .button-hero:focus {
+    background-color: #8ed0ff;
+    box-shadow: none;
+  }
+
+  .button-main:hover,
+  .button-main:focus {
+    background-color: #70624c;
+    transform: translateY(3px);
+    box-shadow: none;
+  }
+ 
+  .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 2rem;
+  }
+
+  .social-links li + li {
+    margin-left: 20px;
+  }
+
+/* --------------------------------------
+  Header
+-------------------------------------- */
+
+.header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  color: #545454;
+  font-family: "Lora", "Piazzolla", "Times New Roman", "YuMincho",
+    "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+  }
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 720px;
+    height: 80px;
+  }
+
+  .header-logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-nav {
+    display: flex;
+  }
+
+  .header-logo img {
+    width: 88px; 
+  }
+
+  /* ハンバーガーメニューで追加 ------ */
+
+  .header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 80px;
+  }
+ 
+  .header-container {
+    position: relative;
+    padding: 16px;
+  }
+ 
+  .header-logo {
+    position: static;
+    top: 0;
+    left: 0;
+  }
+
+  .header-nav-item a {
+    font-size: 1.1rem;
+  }
+
+  .header-nav-item-social {
+    margin: 16px;
+  }
+
+  .header-nav-item-social i {
+    color: #545454;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .header-nav {
+      position: fixed;
+      right: -320px; /* 右から出てくる */
+      top: 0;
+      width: 300px; /* スマホに収まるサイズ */
+      height: 100vh;
+      padding-top: 80px;
+      background-color: #fff;
+      transition: all .6s;
+      z-index: 200;
+      overflow-y: auto; /* メニューが多くなったらスクロールできるように */
+    }
+    .hamburger {
+      position: absolute;
+      right: 16px;
+      top: 20px;
+      width: 40px; /* クリックしやすい幅 */
+      height: 40px; /* クリックしやすい高さ */
+      cursor: pointer;
+      z-index: 300;
+    }
+    .header-nav-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .header-nav-item {
+      width: 240px;
+      padding: 0 14px;
+      text-align: left;
+    }
+    .header-nav-item a {
+      display: block;
+      padding: 16px 0;
+      border-bottom: 1px dotted #545454;
+      text-decoration: none;
+      color: #545454;
+    }
+    .header-nav-item a:hover {
+      background-color: #ececec;
+    }
+
+    .header-nav-list-img {
+      width: 120px;
+      margin: 0px 16px 32px;
+    }
+
+    .hamburger-border {
+      position: absolute;
+      left: 11px;
+      width: 18px;
+      height: 2px;
+      background-color: #545454;
+      transition: all .6s;
+    }
+    .hamburger-border-top {
+      top: 14px;
+    }
+    .hamburger-border-center {
+      top: 20px;
+    }
+    .hamburger-border-bottom {
+      top: 26px;
+    }
+    .black-bg {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 100;
+      background-color: #333;
+      opacity: 0;
+      visibility: hidden;
+      transition: all .6s;
+      cursor: pointer;
+    }
+  
+    /* 表示された時用のCSS */
+    .nav-open .header-nav {
+      right: 0;
+    }
+    .nav-open .black-bg {
+      opacity: .8;
+      visibility: visible;
+    }
+    .nav-open .hamburger-border-top {
+      transform: rotate(45deg);
+      top: 20px;
+    }
+    .nav-open .hamburger-border-center {
+      width: 0;
+      left: 50%;
+    }
+    .nav-open .hamburger-border-bottom {
+      transform: rotate(-45deg);
+      top: 20px;
+    }
+  }/* mobile */
+  
+  @media only screen and (min-width: 769px) {
+    .header-container {
+      max-width: 720px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .header-logo {
+      padding: 0;
+    }
+    .header-nav-list {
+      text-align: right;
+      padding-left: 0px;
+    }
+
+    .header-nav-list-img {
+      display: none;
+    }
+
+    .header-nav-list li {
+      display: inline-block;
+      text-align: right;
+      padding-left: 20px;
+    }
+    .header-nav-list li a{
+      color: #545454;
+    }
+
+    .header-nav-item span {
+      display: none;
+    }
+
+    .header-nav-item-social {
+      display: none;
+    }
+
+  }/* tablet,laptop */
+  
+
+  /*  -----ここまでハンバーガーメニューで追加 */
+  
+
+
+/* --------------------------------------
+  Main - Hero
+-------------------------------------- */
+
+.main-hero {
+    background-color: #ffffff;
+}
+
+.main-hero {
+    position: relative;
+    text-align: center;
+}
+
+img.main-hero-img {
+  max-width: 720px;
+  opacity: 80%;
+}
+
+.main-hero a {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+/* --------------------------------------
+  Main - About
+-------------------------------------- */
+
+.main-about {
+    background-color: #F0F9FF;
+}
+
+.main-about-item-img {
+    width: 50%;
+}
+
+.main-about-item-primary {
+    text-align: left;
+    margin: 0px 0px 24px;
+}
+
+.main-about-item-secondary {
+    margin: 0px 0px 64px;
+    text-align: right;
+}
+
+.main-about-item-img-right {
+    margin-left: auto;
+}
+
+.main-about-item-img img {
+  opacity: 70%;
+  box-shadow: 10px 10px 1px 0 #89C0E6;
+}
+
+.main-about span {
+  text-shadow: 2px 2px 3px #c6c6c6;
+}
+
+
+
+/* --------------------------------------
+  Main - Method
+-------------------------------------- */
+
+.main-method {
+  background-color: #ffffff;
+}
+
+.main-method h3 {
+  font-size: 1.2rem;
+}
+
+.main-method-item {
+  margin-bottom: 40px;
+}
+
+.main-method-item-img {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto 60px;
+}
+
+/* --------------------------------------
+  Main - Fragrance
+-------------------------------------- */
+
+.main-fragrance {
+    background-color: #F0F9FF;
+}
+
+.main-fragrance h3 {
+  margin-bottom: 0px;
+}
+
+.main-fragrance-item-box p {
+  margin: 0px;
+}
+
+.main-fragrance-item-wrap {
+  display: flex;
+  background-color: #ffffff;
+  width: 100%;
+  overflow-x: scroll;
+  padding: 24px 0px;
+  border: 1px solid #a0a0a0;
+  border-radius: 3px;
+}
+
+.main-fragrance-item-wrap::-webkit-scrollbar {
+  background-color: #ebebeb;
+  border-radius: 8px;
+}
+
+.main-fragrance-item-wrap::-webkit-scrollbar-thumb {
+  background-color: #a0a0a0;
+  border-radius: 8px;
+}
+
+.main-fragrance-item-wrap::-webkit-scrollbar-thumb:hover,
+.main-fragrance-item-wrap::-webkit-scrollbar-thumb:focus {
+  background-color: #8ed0ff;
+}
+
+.main-fragrance-item-wrap::-webkit-scrollbar {
+  height: 10px;
+}
+
+.main-fragrance-item-box {
+  flex: none;
+  width: 300px;
+  margin: 0px 8px;
+  padding: 16px;
+  border-radius: 3px;
+}
+
+.main-fragrance-item-img {
+  text-align: center;
+}
+
+.main-fragrance-item-img img {
+  width: 200px;
+}
+
+.main-fragrance-item-floral {
+  background-color: #FEF0EC;
+}
+
+.main-fragrance-item-sweet {
+  background-color: #FCE3ED;
+}
+
+.main-fragrance-item-herbal {
+  background-color: #E8FFF1;
+}
+
+.main-fragrance-item-aqua {
+  background-color: #E4F5FF;
+}
+
+.main-fragrance-item-oriental {
+  background-color: #F0DCFF;
+}
+
+/* --------------------------------------
+  Main - How to Order
+  -------------------------------------- */
+
+  .main-order {
+    background-color: #ffffff;
+    text-align: center;
+  }
+
+  .main-order-item-text a {
+    text-decoration: underline;
+  }
+
+  .main-order-item-step {
+    width: 100%;
+    margin: auto;
+  }
+
+  .main-order-item-step-last {
+    margin: 0 auto 60px;
+  }
+
+  .main-order-h3 {
+    display: inline-block;
+    margin: 0px 0px 4px;
+    padding: 4px 24px;
+    background-color: #545454;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+
+  .main-order-item-img {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .main-order-item-arrow {
+    margin: 0 0 24px;
+  }
+
+  .main-order-item-arrow img {
+      width: 10%;
+      max-width: 40px;
+      margin: 16px;
+  }
+
+
+/* --------------------------------------
+  Main - News
+-------------------------------------- */
+
+.main-news {
+    background-color: #F0F9FF;
+}
+
+.main-news-item {
+  margin: 0 0 64px;
+}
+
+.main-news-item table {
+    width: 90%;
+    margin: auto;
+}
+
+.main-news-item table + table {
+    margin: 24px auto;
+}
+
+.main-news-item th {
+    text-align: left;
+    border-bottom: 1px solid #545454;
+}
+
+.main-button {
+  text-align: center;
+}
+
+/* --------------------------------------
+  Footer
+-------------------------------------- */
+
+.footer {
+    background-color: #6d5b4c;
+    color: #ffffff;
+}
+
+.footer a {
+    color: #ffffff;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer-logo {
+  text-align: center;
+  margin: 0 0 24px;
+}
+
+.footer-menu {
+  margin-bottom: 24px
+}
+
+.footer-nav {
+  margin: 0px 0px 24px;
+  padding: 0;
+}
+
+.footer-follow {
+  margin: 0px 0px 24px;
+}
+
+.footer-copy {
+  display: flex;
+  justify-content: center;
+  margin: 0px auto 16px;
+}
+
+.footer-logo-img {
+  width: 200px;
+}
+
+.footer .footer-menu li {
+    border-bottom: dotted 1px #ffffff;
+    line-height: 3rem;
+}
+
+.footer .footer-menu li a {
+    display: block;
+}
+
+.footer .footer-menu ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+a.footer-menu-links:hover,
+a.footer-menu-links:focus {
+    background-color: #53453a;
+}
+
+/* cursor---- */
+
+ul.cursor li a {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* icon */
+
+ul.cursor li a:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+}
+
+ul.cursor li a:after {
+    right: 16px;
+    width: 16px;
+    height: 16px;
+    margin-top: -6px;
+    border-top: solid 1px #FFF;
+    border-right: solid 1px #FFF;
+    transform: rotate(45deg);
+}
+
+/* ----cursor */
+
+.footer-nav a:hover,
+.footer-nav a:focus {
+  color: #53453a;
+}
+
+.footer-nav ul,
+.footer-nav li {
+  margin: 0px 0px 8px;
+} 
+
+ul.social-links {
+  justify-content: center;
+  padding: 0;
+}
+
+.social-links i:hover,
+.social-links i:focus {
+  color: #53453a;
+}
